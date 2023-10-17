@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+    background-color: rgb(142, 83, 83);
+    font-family: monospace;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+    gap: 4rem;
+}
+/* CANVAS STYLE */
+canvas {
+    display: block;
+    border: 2px solid black;
+    margin: 0 auto; /* Center the canvas */
+}
+
+/* POP UP FORM STYLING */
+.popup {
+    display: none;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.info{
+    font-size: 25px;
+    font-weight: 100;
+}
+.popup-content {
+    text-align: center;
+}
+#exit{
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px; 
+}
+.close {
+    float: right;
+    cursor: pointer;
+}
+/* BUTTON STYLING */
+.btn {
+    margin-top: 2rem;
+    
+}
+
+.btn button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn button#start {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    
+}
+
+.btn button#reset {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.btn button:hover {
+    opacity: 0.8;
+}
+
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="field">
+        <canvas id="tetris" width="200" height="400"></canvas>
+        <div class="btn">
+            <button  id="start">Start</button>
+            <button id="reset">Reset</button>
+            
+        </div>   
+      </div>
+      <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Game Over</p>
+        </div>
+    </div>    
+
+    <div class="info">
+        <span>Score :</span> <div id="score">0</div> <br>
+        <span>Level :</span> <div id="level">1</div>
+        
+    </div>
+</div>
+<script src="tetrominoes.js"></script>
+<script src="tetris.js"></script>
+</body>
+</html>
